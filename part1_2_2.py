@@ -12,3 +12,12 @@ print()
 # print the object which is saved in variable, 'df'
 print(df)
 
+# creating dataframe with indexing the raws and naming the columns
+df = pd.DataFrame([[15, 'male', 'Dukyoung'], [17, 'female', 'Soori']], index=['Junseo', 'Yeeun'], columns=['age', 'sex', 'school'])
+
+# check index raw and column name
+print(df)     # dataframe
+print()
+print(df.index)   # index raw
+print()
+print(df.columns)   # column name
