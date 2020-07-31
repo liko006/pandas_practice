@@ -1,5 +1,7 @@
 import pandas as pd
 
+# example 1-4
+
 # define the dictionary which names the columns as key and the lists as values (2 dimension)
 dict_data = {'c0':[1,2,3], 'c1':[4,5,6], 'c2':[7,8,9], 'c3':[10,11,12], 'c4':[13,14,15]}
 
@@ -21,3 +23,5 @@ print()
 print(df.index)   # index raw
 print()
 print(df.columns)   # column name
+
+
