@@ -97,3 +97,14 @@ print()
 
 # example part 1-9
 
+exam_data = {'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'phys_ed':[100,90,90]}
+
+df = pd.DataFrame(exam_data, index=['Seojoon', 'Woohyun', 'Ina'])
+print(df)
+print()
+
+label1 = df.loc['Seojoon']
+position1 = df.iloc[0]
+print(label1)
+print()
+print(position1)
