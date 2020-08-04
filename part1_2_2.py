@@ -108,3 +108,15 @@ position1 = df.iloc[0]
 print(label1)
 print()
 print(position1)
+
+label2 = df.loc[['Seojoon', 'Woohyun']]
+position2 = df.iloc[[0,1]]
+print(label2)
+print()
+print(position2)
+
+label3 = df.loc[['Seojoon':'Woohyun']]
+position3 = df.iloc[[0:1]]
+print(label3)
+print()
+print(position3)
