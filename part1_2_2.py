@@ -223,4 +223,46 @@ print()
 
 # example part 1-14
 
+exam_data = {'name': ['Seojoon', 'Woohyun', 'Ina'], 'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
+df = pd.DataFrame(exam_data)
+print(df)
+print()
 
+df.set_index('name', inplace=True)
+print(df)
+print()
+
+df.iloc[0][3] = 80
+print(df)
+print()
+
+df.loc['Seojoon','gym'] = 90
+print(df)
+print()
+
+df.loc['Seojoon','gym'] = 100
+print(df)
+print()
+
+df.loc['Seojoon', ['music','gym']] = 50
+print(df)
+print()
+
+df.loc['Seojoon', ['music','gym']] = 100, 50
+print(df)
+print()
+
+# example 1-15
+
+exam_data = {'name': ['Seojoon', 'Woohyun', 'Ina'], 'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
+df = pd.DataFrame(exam_data)
+print(df)
+print()
+
+df = df.transpose()
+print(df)
+print()
+
+df = df.T
+print(df)
+print()
