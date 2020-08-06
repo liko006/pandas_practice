@@ -190,3 +190,37 @@ i = df.loc['Seojoon':'Woohyun', 'music':'gym']
 print(i)
 j = df.iloc[0:2, 2:]
 print(j)
+
+# example part 1-12
+
+exam_data = {'name': ['Seojoon', 'Woohyun', 'Ina'], 'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
+df = pd.DataFrame(exam_data)
+print(df)
+print()
+
+df['kor'] = 80
+print(df)
+print()
+
+# example part 1-13
+
+exam_data = {'name': ['Seojoon', 'Woohyun', 'Ina'], 'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
+df = pd.DataFrame(exam_data)
+print(df)
+print()
+
+df.loc[3] = 0
+print(df)
+print()
+
+df.loc[4] = ['Dongkyu',90,80,70,60]
+print(df)
+print()
+
+df.loc['raw5'] = df.loc[3]
+print(df)
+print()
+
+# example part 1-14
+
+
