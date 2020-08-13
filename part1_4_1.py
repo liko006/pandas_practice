@@ -45,3 +45,22 @@ print()
 print(student2)
 print()
 
+# example part 1-24
+import pandas as pd
+import numpy as np
+
+student1 = pd.Series({'kor':np.nan, 'eng':80, 'math':90})
+student2 - pd.Series({'math':80, 'kor':90})
+print(student1)
+print()
+print(student2)
+print()
+
+sr_add = student1.add(student2, fill_value=0)
+sr_sub = student1.sub(student2, fill_value=0)
+sr_mul = student1.mul(student2, fill_value=0)
+sr_div = student1.div(student2, fill_value=0)
+
+result = pd.DataFrame([sr_add, sr_sub, sr_mul, sr_div], index=['add','sub','mul','div'])
+print(result)
+print()
