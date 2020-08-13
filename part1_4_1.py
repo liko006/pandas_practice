@@ -1,6 +1,6 @@
-import pandas as pd
 
 # example part 1-21
+import pandas as pd
 
 student1 = pd.Series({'kor':100, 'eng':80, 'math':90})
 print(student1)
@@ -14,6 +14,7 @@ print(tpye(percentage))
 print()
 
 # example part 1-22
+import pandas as pd
 
 student1 = pd.Series({'kor':100, 'eng':80, 'math':90})
 student2 = pd.Series({'math':80, 'kor':90, 'eng':80})
@@ -31,5 +32,16 @@ print()
 
 result = pd.DataFrame([addition, subtraction, multiplication, division], index=['add','sub','mul','div'])
 print(result)
+print()
+
+# example part 1-23
+import pandas as pd
+import numpy as np
+
+student1 = pd.Series({'kor':np.nan, 'eng':80, 'math':90})
+student2 - pd.Series({'math':80, 'kor':90})
+print(student1)
+print()
+print(student2)
 print()
 
