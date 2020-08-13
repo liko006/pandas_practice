@@ -17,6 +17,7 @@ print()
 print(sr)
 
 # example part 1-2
+import pandas as pd
 
 # convert a list into Series and save in 'sr'
 list_data = ['2019-01-02', 3.14, 'ABC', 100, True]
@@ -31,6 +32,7 @@ print()
 print(val)
 
 # example part 1-3
+import pandas as pd
 
 # convert tuple to Series (with index option)
 tup_data = ('youngin', '2010-05-01', 'female', True)
