@@ -1,6 +1,6 @@
-import pandas as pd
 
 # example part 1-4
+import pandas as pd
 
 # define the dictionary which names the columns as key and the lists as values (2 dimension)
 dict_data = {'c0':[1,2,3], 'c1':[4,5,6], 'c2':[7,8,9], 'c3':[10,11,12], 'c4':[13,14,15]}
@@ -16,6 +16,7 @@ print(df)
 print()
 
 # example part 1-5
+import pandas as pd
 
 # creating dataframe with indexing the raws and naming the columns
 df = pd.DataFrame([[15, 'male', 'Dukyoung'], [17, 'female', 'Soori']], index=['Junseo', 'Yeeun'], columns=['age', 'sex', 'school'])
@@ -40,6 +41,7 @@ print(df.column)   # column name
 print()
 
 # example part 1-6
+import pandas as pd
 
 # creating dataframe with indexing the raws and naming the columns
 df = pd.DataFrame([[15, 'male', 'Dukyoung'], [17, 'female', 'Soori']], index=['Junseo', 'Yeeun'], columns=['age', 'sex', 'school'])
@@ -59,6 +61,7 @@ print(df)
 print()
 
 # example part 1-7
+import pandas as pd
 
 # converting data type by using DataFrame() function and save as 'df'
 exam_data = {'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
@@ -80,6 +83,7 @@ print(df3)
 print()
 
 # example part 1-8
+import pandas as pd
 
 # converting data type by using DataFrmae() function and save as 'df'
 exam_data = {'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
@@ -101,6 +105,7 @@ print(df5)
 print()
 
 # example part 1-9
+import pandas as pd
 
 exam_data = {'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
 
@@ -130,6 +135,7 @@ print(position3)
 print()
 
 # example part 1-10 
+import pandas as pd
 
 exam_data = {'name': ['Seojoon', 'Woohyun', 'Ina'], 'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
 df = pd.DataFrame(exam_data)
@@ -158,6 +164,7 @@ print(type(math2))
 print()
 
 # example part 1-11
+import pandas as pd
 
 exam_data = {'name': ['Seojoon', 'Woohyun', 'Ina'], 'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
 df = pd.DataFrame(exam_data)
@@ -192,6 +199,7 @@ j = df.iloc[0:2, 2:]
 print(j)
 
 # example part 1-12
+import pandas as pd
 
 exam_data = {'name': ['Seojoon', 'Woohyun', 'Ina'], 'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
 df = pd.DataFrame(exam_data)
@@ -203,6 +211,7 @@ print(df)
 print()
 
 # example part 1-13
+import pandas as pd
 
 exam_data = {'name': ['Seojoon', 'Woohyun', 'Ina'], 'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
 df = pd.DataFrame(exam_data)
@@ -222,6 +231,7 @@ print(df)
 print()
 
 # example part 1-14
+import pandas as pd
 
 exam_data = {'name': ['Seojoon', 'Woohyun', 'Ina'], 'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
 df = pd.DataFrame(exam_data)
@@ -253,6 +263,7 @@ print(df)
 print()
 
 # example 1-15
+import pandas as pd
 
 exam_data = {'name': ['Seojoon', 'Woohyun', 'Ina'], 'math':[90,80,70], 'eng':[98,89,95], 'music':[85,95,100], 'gym':[100,90,90]}
 df = pd.DataFrame(exam_data)
