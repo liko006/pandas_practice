@@ -1,6 +1,6 @@
-import pandas as pd
 
 # example part 1-16
+import pandas as pd
 
 exam_data = {'name':['Seojoon','Woohyun','Ina'], 'math':[90,80,70], 'eng':[98,89,95], ' music':[85,95,100], 'gym':[100,90,90]}
 df = pd.DataFrame(exam_data)
@@ -18,6 +18,7 @@ print(ndf3)
 print()
 
 # example 1-17
+import pandas as pd
 
 dict_data = {'c0':[1,2,3], 'c1':[4,5,6], 'c2':[7,8,9], 'c3':[10,11,12], 'c4':[13,14,15]}
 
@@ -36,6 +37,7 @@ print(ndf2)
 print()
 
 # example part 1-18
+import pandas as pd
 
 dict_data = {'c0':[1,2,3], 'c1':[4,5,6], 'c2':[7,8,9], 'c3':[10,11,12], 'c4':[13,14,15]}
 
@@ -48,6 +50,7 @@ print(ndf)
 print()
 
 # example part 1-19
+import pandas as pd
 
 dict_data = {'c0':[1,2,3], 'c1':[4,5,6], 'c2':[7,8,9], 'c3':[10,11,12], 'c4':[13,14,15]}
 
