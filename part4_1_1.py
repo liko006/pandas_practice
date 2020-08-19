@@ -108,3 +108,59 @@ plt.ylabel('이동 인구수')
 plt.legend(labels=['서울 -> 경기'], loc='best')
 plt.show()
 
+# example part 4-5 
+
+# same as part 4-4 until sr_one = df_seoul.loc['경기도']
+
+plt.style.use('ggplot')
+
+plt.figure(figsize=(14,5))
+
+plt.xticks(size=10, rotation='vertical')
+
+plt.plot(sr_one.index, sr_one.values, marker='o', markersize=10)
+plt.title('서울 -> 경기 인구 이동', size=30)
+plt.xlabel('기간', size=20)
+plt.ylabel('이동 인구수', size=20)
+plt.legend(labels=['서울 -> 경기'], loc='best', fontsize=15)
+plt.show()
+
+# example part 4-6
+
+import matplotlib.pyplot as plt
+
+print(plt.style.available)
+
+# example part 4-7
+
+# same as part 4-5 until plt.legend(labels=['서울 -> 경기'], loc='best', fontsize=15)
+
+plt.ylim(50000, 800000)
+
+plt.annotate('', 
+             xy=(20, 620000),       # end of arrow
+             xytext=(2,290000),     # start of arrow
+             xycoords='data',       # type of coordinates
+             arrowprops=dict(arrowstyle='->', color='skyblue', lw=5)) # arrow 
+
+plt.annotate('', 
+             xy=(47, 450000),       # end of arrow
+             xytext=(30,580000),    # start of arrow
+             xycoords='data',       # type of coordinates
+             arrowprops=dict(arrowstyle='->', color='olive', lw=5)) # arrow 
+
+plt.annotate('인구 이동 증가(1970-1995)',    # contents of text
+             xy=(10, 450000),               # midpoint of text
+             rotation=25,                   # angel of rotation of text
+             va='baseline',                 # vertical lineup
+             ha='center',                   # horizontal lineup
+             fontsize=15)                   # size of text 
+
+plt.annotate('인구 이동 감소(1995-2017)',    # contents of text
+             xy=(40, 560000),               # midpoint of text
+             rotation=-11,                  # angel of rotation of text
+             va='baseline',                 # vertical lineup
+             ha='center',                   # horizontal lineup
+             fontsize=15)                   # size of text 
+
+plt.show()
