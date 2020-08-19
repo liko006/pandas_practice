@@ -138,15 +138,15 @@ print(plt.style.available)
 plt.ylim(50000, 800000)
 
 plt.annotate('', 
-             xy=(20, 620000),       # end of arrow
-             xytext=(2,290000),     # start of arrow
-             xycoords='data',       # type of coordinates
+             xy=(20, 620000),               # end of arrow
+             xytext=(2,290000),             # start of arrow
+             xycoords='data',               # type of coordinates
              arrowprops=dict(arrowstyle='->', color='skyblue', lw=5)) # arrow 
 
 plt.annotate('', 
-             xy=(47, 450000),       # end of arrow
-             xytext=(30,580000),    # start of arrow
-             xycoords='data',       # type of coordinates
+             xy=(47, 450000),               # end of arrow
+             xytext=(30,580000),            # start of arrow
+             xycoords='data',               # type of coordinates
              arrowprops=dict(arrowstyle='->', color='olive', lw=5)) # arrow 
 
 plt.annotate('인구 이동 증가(1970-1995)',    # contents of text
