@@ -205,3 +205,27 @@ ax1.set_xticklabels(sr_one.index, rotation=75)
 ax2.set_xticklabels(sr_one.index, rotation=75)
 
 plt.show()
+
+# example part 4-9
+
+# same as part 4-8 unitl plt.style.use('ggplot')
+
+fig = plt.figure(figsize=(20,5))
+ax = fig.add_subplot(1,1,1)
+
+ax.plot(sr_one, marker='o', markerfacecolor='orange', markersize=10, color='olive', linewidth=2, label='서울 -> 경기')
+ax.legend(loc='best')
+
+ax.set_ylim(50000, 800000)
+
+ax.set_title('서울 -> 경기 인구 이동', size=20)
+
+ax.set_xlabel('기간', size=12)
+ax.set_ylabel('이동 인구수', size=12)
+
+ax.set_xticklabels(sr_one.index, rotation=75)
+
+ax.tick_params(axis='x', labelsize=10)
+ax.tick_params(axis='y', labelsize=10)
+
+plt.show()
