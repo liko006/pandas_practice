@@ -24,13 +24,26 @@ df_4 = df_4.transpose()
 
 plt.style.use('ggplot')
 
-df_4.index= df_4.index.map(int)
+df_4.index = df_4.index.map(int)
 
 df_4.plot(kind='area', stacked=False, alpha=0.2, figsize=(20,10))
 
 plt.title('서을 -> 타시도 인구 이동', size=30)
 plt.ylabel('이동 인구 수', size=20)
 plt.xlabel('기간', size=10)
+plt.legend(loc='best', fontsize=15)
+
+plt.show()
+
+# example part 4-14
+
+# same as part 4-13 until df_4.index = df_4.index.map(int)
+
+df_4.plot(kind='area', stacked=True, alpha=0.2, figsize=(20,10))
+
+plt.title('서울 -> 타시도 인구 이동', size=30)
+plt.ylabel('이동 인구 수', size=20)
+plt.xlabel('기간', size=20)
 plt.legend(loc='best', fontsize=15)
 
 plt.show()
