@@ -47,3 +47,17 @@ plt.xlabel('기간', size=20)
 plt.legend(loc='best', fontsize=15)
 
 plt.show()
+
+# example part 4-15
+
+# same as part 4-13 until df_4.index = df_4.index.map(int)
+
+ax = df_4.plot(kind='area', stacked=True, alpha=0.2, figsize=(20,10))
+print(type(ax))
+
+ax.set_title('서울 -> 타시도 인구 이동', size=30, color='brown', weight='bold')
+ax.set_ylabel('이동 인구 수', size=20, color='blue')
+ax.set_xlabel('기간', size=20, color='blue')
+ax.legend(loc='best', fontsize=15)
+
+plt.show()
