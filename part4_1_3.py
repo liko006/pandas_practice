@@ -36,3 +36,24 @@ plt.ylim(5000, 30000)
 plt.legend(loc='best', fontsize=15)
 
 plt.show()
+
+# example part 4-17
+
+# same as part 4-16 until df_seoul.set_index('전입지', inplace=True)
+
+col_years = list(map(str, range(2010,2018)))
+df_4 = df_seoul.loc[['충청남도','경상북도','강원도','전라남도'], col_years]
+
+df_4['합계'] = df_4.sum(axis=1)
+
+df_total = df_4[['합계']].sort_values(by='합계', ascending=True)
+
+plt.style.use('ggplot')
+
+df_total.plot(kind='barh', color='cornflowerblue', width=0.5, figsize=(10,5))
+
+plt.title('서울 -> 타시도 인구 이동')
+plt.ylabel('전입지')
+plt.xlabel('이동 인구 수')
+
+plt.show()
