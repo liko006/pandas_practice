@@ -95,4 +95,3 @@ plt.title('북한 전력 발전량 (1990~2016)', size=30)
 ax1.legend(loc='upper left')
 
 plt.show()
-
