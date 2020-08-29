@@ -40,3 +40,16 @@ print(df_thresh.columns)
 df_age = df.dropna(subset=['age'], how='any', axis=0)
 print(len(df_age))
 
+# example part 5-3 (Replacing NaN by mean of data)
+
+import seaborn as sns
+
+df = sns.load_dataset('titanic')
+
+print(df['age'].head(10))  # NaN in 5th row
+print()
+
+mean_age = df['age'].mean(axis=0)  # mean of 'age' column
+df['age'].fillna(mean_age, inplace=True)
+
+print(df['age'].head(10))
