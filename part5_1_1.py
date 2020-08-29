@@ -40,7 +40,7 @@ print(df_thresh.columns)
 df_age = df.dropna(subset=['age'], how='any', axis=0)
 print(len(df_age))
 
-# example part 5-3 (Replacing NaN by mean of data)
+# example part 5-3 (Replacing NaN by mean of a column)
 
 import seaborn as sns
 
@@ -53,3 +53,20 @@ mean_age = df['age'].mean(axis=0)  # mean of 'age' column
 df['age'].fillna(mean_age, inplace=True)
 
 print(df['age'].head(10))
+
+# example part 5-4 (Replacing NaN by most freq. data in a column)
+
+import seaborn as sns
+
+df = sns.load_dataset('titanic')
+
+print(df['embark_town'][825:830])
+print()
+
+most_freq = df['embark_town'].value_counts(dropna=True).idxmax()
+print(most_freq)
+print()
+
+df['embark_town'].fillna(most_freq, inplace=True)
+
+print(df['embark_town'][825:830])
