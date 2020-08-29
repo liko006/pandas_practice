@@ -70,3 +70,15 @@ print()
 df['embark_town'].fillna(most_freq, inplace=True)
 
 print(df['embark_town'][825:830])
+
+# example part 5-5 (Replacing NaN with neighboring data)
+
+import seaborn as sns
+
+df = sns.load_dataset('titanic')
+
+print(df['embark_town'][825:830])
+print()
+
+df['embark_town'].fillna(method='ffill', inplace=True)
+print(df['embark_town'][825:830])
