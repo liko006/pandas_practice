@@ -20,3 +20,22 @@ df['hp_bin'] = pd.cut(x=df['horsepower'], bins=bin_dividers, labels=bin_names, i
 
 horsepower_dummies = pd.get_dummies(df['hp_bin'])
 print(horsepower_dummies.head(15))
+
+# example part 5-12
+
+from sklearn import preprocessing
+
+label_encoder = preprocessing.LabelEncoder()
+onehot_encoder = preprocessing.OneHotEncoder()
+
+onehot_labeled = label_encoder.fit_transform(df['hp_bin'].head(15))
+print(onehot_labeled)
+print(type(onehot_labeled))
+
+onehot_reshaped = onehot_labeled.reshape(len(onehot_labeled), 1)
+print(onehot_reshaped)
+print(type(onehot_reshaped))
+
+onehot_fitted = onehot_encoder.fit_transform(onehot_reshaped)
+print(onehot_fitted)
+print(type(onehot_fitted))
