@@ -29,3 +29,18 @@ print()
 sr3 = df['age'].apply(lambda x: add_10(x))   # x = df['age']
 print(sr3.head())
 print()
+
+# example part 6-2
+
+import seaborn as sns
+
+titanic = sns.load_dataset('titanic')
+df = titanic.loc[:, ['age','fare']]
+print(df.head())
+print()
+
+def add_10(n):
+    return n + 10
+
+df_map = df.applymap(add_10)
+print(df_map.head())
