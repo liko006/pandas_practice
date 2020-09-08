@@ -22,3 +22,19 @@ print()
 merge_outer = pd.merge(df1,df2, how='outer', on='id')
 print(merge_outer)
 print()
+
+merge_left = pd.merge(df1,df2, how='left', left_on='stock_name', right_on='name')
+print(merge_left)
+print()
+
+merge_right = pd.merge(df1,df2, how='right', left_on='stock_name', right_on='name')
+print(merge_right)
+print()
+
+price = df1[df1['price'] < 50000]
+print(price.head())
+print()
+
+value = pd.merge(price,df2)
+print(value)
+print()
