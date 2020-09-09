@@ -62,3 +62,25 @@ print(age_zscore.loc[0:9])
 print()
 print(type(age_zscore))
 print()
+
+# example part 6-17
+
+import pandas as pd
+import seaborn as sns
+
+titanic = sns.load_dataset('titanic')
+df = titanic.loc[:, ['age','sex','class','fare','survived']]
+
+grouped = df.groupby(['class'])
+
+grouped_filter = grouped.filter(lambda x: len(x) >= 200)
+print(grouped_filter.head())
+print()
+print(type(grouped_filter))
+print()
+
+age_filter = grouped.filter(lambda x: x.age.mean() < 30)
+print(age_filter.tail())
+print()
+print(type(age_filter))
+print()
