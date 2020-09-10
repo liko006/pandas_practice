@@ -36,6 +36,10 @@ agg_sep = grouped.agg({'fare':['min','max'], 'age':'mean'})
 print(agg_sep.head())
 print()
 
+# example part 6-16
+
+# same as part 6-15 until grouped = df.groupby(['class'])
+
 age_mean = grouped.age.mean()
 print(age_mean)
 print()
@@ -84,3 +88,35 @@ print(age_filter.tail())
 print()
 print(type(age_filter))
 print()
+
+# example part 6-18
+
+import pandas as pd
+import seaborn as sns
+
+titanic = sns.load_dataset('titanic')
+df = titanic.loc[:, ['age','sex','class','fare','survived']]
+
+grouped = df.groupby(['class'])
+
+agg_grouped = grouped.apply(lambda x: x.describe())
+print(agg_grouped)
+print()
+
+def z_score(x):
+    return (x-x.mean())/x.std()
+
+age_zscore = grouped.age.apply(z_score)
+print(age_zscore.head())
+print()
+
+age_filter = grouped.apply(lambda x: x.age.mean() < 30)
+print(age_filter)
+print()
+
+for x in age_filter.index:
+    if age_filter[x] == True:
+        age_filter_df = grouped.get_group(x)
+        print(age_filter_df.head())
+        print()
+  
