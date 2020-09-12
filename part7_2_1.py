@@ -34,3 +34,13 @@ df['horsepower'] = df['horsepower'].astype('float')
 
 print(df.describe())
 print()
+
+# step 3 속성 (feature or variable) 선택
+ndf = df[['mpg','cylinders','horsepower','weight']]
+print(ndf.head())
+
+# mpg(종속)와 다른 변수간의 선형관계를 산점도로 확인
+ndf.plot(kind='scatter', x='weight', y='mpg', c='coral', s=10, figsize=(10,5))
+plt.show()
+plt.close()
+
