@@ -24,3 +24,13 @@ print()
 
 print(df.describe())
 print()
+
+print(df['horsepower'].unique())
+print()
+
+df['horsepower'].replace('?', np.nan, inplace=True)     # ? -> NaN 으로 변경
+df.dropna(subset=['horsepower'], axis=0, inplace=True)  # 누락 데이터 행 삭제
+df['horsepower'] = df['horsepower'].astype('float')
+
+print(df.describe())
+print()
