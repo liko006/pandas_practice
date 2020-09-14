@@ -44,3 +44,20 @@ ndf.plot(kind='scatter', x='weight', y='mpg', c='coral', s=10, figsize=(10,5))
 plt.show()
 plt.close()
 
+# seaborn으로 산점도 그리기
+fig = plt.figure(figsize=(10,5))
+ax1 = fig.add_subplot(1,2,1)
+ax2 = fig.add_subplot(1,2,2)
+sns.regplot(x='weight', y='mpg', data=ndf, ax=ax1)
+sns.regplot(x='weight', y='mpg', data=ndf, ax=ax2, fit_reg=False)  # No reg. line 
+plt.show()
+plt.close()
+
+sns.jointplot(x='weight', y='mpg', data=ndf)
+sns.jointplot(x='weight', y='mpg', kind='reg', data=ndf)
+plt.show()
+plt.close()
+
+grid_ndf = sns.pairplot(ndf)
+plt.show()
+plt.close()
