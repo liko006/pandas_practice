@@ -64,10 +64,40 @@ plt.close()
 
 # step 4 데이터셋 구분 - train/test
 X=ndf[['weight']]   # 독립변수
-Y=ndf[['mpg']]      # 종속변수
+y=ndf[['mpg']]      # 종속변수
 
 from sklearn.model_selection import train_test_split
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=10)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=10)
 
 print('train data 개수: ', len(X_train))
 print('test data 개수: ', len(X_test))
+
+# step 5 Ordinary Linear Regression 모형 만들기 -sklearn 사용
+from sklearn.linear_model import LinearRegression
+
+# 모형 객체 생성
+lr = LinearRegression()
+
+# 모형 학습
+lr.fit(X_train, y_train)
+
+# 학습된 모형을 test
+r_sq = lr.score(X_test, y_test)
+print(r_sq)
+
+# coefficient of model
+print('coef. a: ', lr.coef_)
+print()
+
+# y-intercept of model
+print('y-intercept b: ', lr.intercept_)
+print()
+
+# 모형에 전체 X 데이터를 입력, 예측한 값 (y_hat)과 실제 y값 비교
+y_hat = lr.predict(X)
+
+plt.figure(figsize=(10,5))
+ax1 = sns.distplot(y, hist=False, label='y')
+ax2 = sns.distplot(y_hat, hist=False, label='y_hat', ax=ax1)
+plt.show()
+plt.close()
