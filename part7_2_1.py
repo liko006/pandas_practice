@@ -61,3 +61,13 @@ plt.close()
 grid_ndf = sns.pairplot(ndf)
 plt.show()
 plt.close()
+
+# step 4 데이터셋 구분 - train/test
+X=ndf[['weight']]   # 독립변수
+Y=ndf[['mpg']]      # 종속변수
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=10)
+
+print('train data 개수: ', len(X_train))
+print('test data 개수: ', len(X_test))
