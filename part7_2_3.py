@@ -26,3 +26,18 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 
 print('훈련 데이터: ', X_train.shape)
 print('검증 데이터: ', X_test.shape)
+
+# step 5 다중회귀분석 - sklearns
+from sklearn.linear_model import LinearRegression
+
+lr = LinearRegression()
+
+lr.fit(X_train, y_train)
+
+r_sq = lr.score(X_test, y_test)
+print(r_sq)
+print()
+
+print('X 변수의 계수 a: ', lr.coef_)
+print()
+print('상수항 b: ', lr.intercept_)
