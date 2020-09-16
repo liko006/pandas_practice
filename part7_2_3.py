@@ -41,3 +41,12 @@ print()
 print('X 변수의 계수 a: ', lr.coef_)
 print()
 print('상수항 b: ', lr.intercept_)
+
+# 산점도와 예측 그래프
+y_hat = lr.predict(X_test)
+
+plt.figure(figsize=(10,5))
+ax1 = sns.distplot(y_test, hist=False, label='y_test')
+ax2 = sns.distplot(y_hat, hist=False, label='y_hat', ax=ax1)
+plt.show()
+plt.close()
