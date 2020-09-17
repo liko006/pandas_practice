@@ -39,3 +39,12 @@ ndf = rdf[['survived','pclass','sex','age','sibsp','parch','embarked']]
 print(ndf.head())
 
 # sex와 embarked 열의 범주형 데이터를 숫자형으로 변환 (더미 변수를 만드는 one-hot-encoding)
+onehot_sex = pd.get_dummies(ndf['sex'])
+ndf = pd.concat([ndf, onehot_sex], axis=1)
+
+onehot_town = pd.get_dummies(ndf['embarked'], prefix='town')
+ndf = pd.concat([ndf, onehot_town], axis=1)
+
+ndf = ndf.drop(['sex','embarked'], axis=1, inplace=True)
+print(ndf.head())
+print()
