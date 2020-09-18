@@ -55,10 +55,37 @@ y = ndf['survived']
 
 # 설명변수 데이터를 정규화
 from sklearn import preprocessing
-X = preprocessing.StandardScalar().fit(X).transform(X)
+X = preprocessing.StandardScaler().fit(X).transform(X)
 
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=10)
 
 print('train data 개수: ', X_train.shape)
 print('test data 개수: ', X_test.shape)
+
+# step 5 KNN 분류 모형 - sklearn
+from sklearn.neighbors import KNeighborsClassifier
+
+# 모형 객체 생성 (k=5r)
+knn = KNeighborsClassifier(n_neighbors=5)
+
+# train data로 학습
+knn.fit(X_train, y_train)
+
+# test data로 y_hat 예측
+y_hat = knn.predict(X_test)
+
+print(y_hat[0:10])
+print(y_test.values[0:10])
+print()
+
+# 모형 성능 평가 - Confusion Matrix
+from sklearn import metrics
+knn_matrix = metrics.confusion_matrix(y_test,y_hat)
+print(knn_matrix)
+print()
+
+# 모형 성능 평가 - 평가 지표 계산
+knn_report = metrics.classification_report(y_test,y_hat)
+print(knn_report)
+print()
