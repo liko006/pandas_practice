@@ -48,3 +48,17 @@ ndf = pd.concat([ndf, onehot_town], axis=1)
 ndf = ndf.drop(['sex','embarked'], axis=1, inplace=True)
 print(ndf.head())
 print()
+
+# step 4 데이터 셋 구분 train/test
+X = ndf[['pclass','age','sibsp','parch','female','male','town_C','town_Q','town_S']]
+y = ndf['survived']
+
+# 설명변수 데이터를 정규화
+from sklearn import preprocessing
+X = preprocessing.StandardScalar().fit(X).transform(X)
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=10)
+
+print('train data 개수: ', X_train.shape)
+print('test data 개수: ', X_test.shape)
