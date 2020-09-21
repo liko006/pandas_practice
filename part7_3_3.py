@@ -21,3 +21,12 @@ print(df.info())
 print()
 print(df.describe())
 print()
+
+print(df['bare_nuclei'].unique())
+print()
+
+df['bare_nuclei'].replace('?', np.nan, inplace=True)
+df.dropna(subset=['bare_nuclei'], axis=0, inplace=True)
+df['bare_nuclei'] = df['bare_nuclei'].astype('int')
+print(df.describe())
+print()
