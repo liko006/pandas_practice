@@ -62,4 +62,11 @@ print(y_hat[0:10])
 print(y_test.values[0:10])
 print()
 
+# 모형 성능 평가
+from sklearn import metrics
+tree_matrix = metrics.confusion_matrix(y_test,y_hat)
+print(tree_matrix)
+print()
 
+tree_report = metrics.classification_report(y_test, y_hat)
+print(tree_report)
