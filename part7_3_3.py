@@ -45,3 +45,21 @@ X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_sta
 print('train data 개수: ', X_train.shape)
 print('test data 개수: ', X_test.shape)
 print()
+
+# step 4 Decision Tree 분류 모형 - sklearn
+from sklearn import tree
+
+# 모형 객체 생성
+tree_model = tree.DecisionTreeClassifier(criterion='entropy', max_depth=5)
+
+# 모형 학습
+tree_model.fit(X_train, y_train)
+
+# 결과 예측
+y_hat = tree_model.predict(X_test)
+
+print(y_hat[0:10])
+print(y_test.values[0:10])
+print()
+
+
