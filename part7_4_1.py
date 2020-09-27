@@ -12,3 +12,11 @@ import matplotlib.pyplot as plt
 uci_path = 'https://archive.ics.uci.edu/ml/machine-learning-databases/\00292/Wholesale%20customers%20data.csv'
 df = pd.read_csv(uci_path, header=0)
 
+# step 2 데이터 탐색
+
+print(df.head())
+print()
+print(df.info())
+print()
+print(df.describe())
+print()
