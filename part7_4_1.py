@@ -57,3 +57,12 @@ df.plot(kind='scatter', x='Grocery', y='Frozen', c='Cluster', cmap='Set1', color
 df.plot(kind='scatter', x='Milk', y='Delicassen', c='Cluster', cmap='Set1', colorbar=True, figsize=(10,10))
 plt.show()
 plt.close()
+
+# 큰 값으로 구성된 클러스터 제외
+mask = (df['Cluster'] == 1) | (df['Cluster'] == 2)
+ndf = df[~mask]
+
+ndf.plot(kind='scatter', x='Grocery', y='Frozen', c='Cluster', cmap='Set1', colorbar=False, figsize=(10,10))
+ndf.plot(kind='scatter', x='Milk', y='Delicassen', c='Cluster', cmap='Set1', colorbar=True, figsize=(10,10))
+plt.show()
+plt.close()
