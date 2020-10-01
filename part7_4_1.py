@@ -51,3 +51,9 @@ print()
 df['Cluster'] = cluster_label
 print(df.head())
 print()
+
+# 그래프로 표현
+df.plot(kind='scatter', x='Grocery', y='Frozen', c='Cluster', cmap='Set1', colorbar=False, figsize=(10,10))
+df.plot(kind='scatter', x='Milk', y='Delicassen', c='Cluster', cmap='Set1', colorbar=True, figsize=(10,10))
+plt.show()
+plt.close()
