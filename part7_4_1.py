@@ -32,3 +32,22 @@ X = preprocessing.StandardScaler.fit(X).transfrom(X)
 
 print(X[:5])
 print()
+
+# step 4 k-means 군집 모형 - sklearn
+
+from sklearn import cluster
+
+# 모형 객체
+kmeans = cluster.KMeans(init='k-means++', n_clusters=5, n_init=10)
+
+# 모형 학습
+kmeans.fit(X)
+
+# 예측
+cluster_label = kmeans.labels_
+print(cluster_label)
+print()
+
+df['Cluster'] = cluster_label
+print(df.head())
+print()
