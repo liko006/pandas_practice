@@ -27,3 +27,11 @@ print(df.info())
 print()
 print(df.describe())
 print()
+
+# 지도에 위치 표시
+mschool_map = folium.Map(location=[37.55,126.98], tiles='Stamen Terrain', zoom_start=12)
+
+for name, lat, lng in zip(df.학교명, df.위도, df.경도):
+    folium.CircleMarker([lat,lng], radius=5, color='brown', fill=True, fill_color='coral', fill_opacity=0.7, popup=name).add_to(mschool_map)
+
+mschool_map.save('./seoul_mschool_loc.html')
