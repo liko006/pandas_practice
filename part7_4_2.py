@@ -64,3 +64,22 @@ columns_list = [9,10,13]
 X = df.iloc[:, columns_list]
 print(X[:5])
 print()
+
+# 설명변수 데이터 정규화
+X = preprocessing.StandardScaler().fit(X).transform(X)
+
+# DBSCAN 모형 
+dbm = cluster.DBSCAN(eps=0.2, min_samples=5)
+
+# 모형 학습
+dbm.fit(X)
+
+# 예측(군집)
+cluster_label = dbm.labels_
+print(cluster_label)
+print()
+
+# 예측 결과 데이터프레임에 추가
+df['Cluster'] = cluster_label
+print(df.head())
+print()
