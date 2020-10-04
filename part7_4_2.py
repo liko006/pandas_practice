@@ -35,3 +35,23 @@ for name, lat, lng in zip(df.학교명, df.위도, df.경도):
     folium.CircleMarker([lat,lng], radius=5, color='brown', fill=True, fill_color='coral', fill_opacity=0.7, popup=name).add_to(mschool_map)
 
 mschool_map.save('./seoul_mschool_loc.html')
+
+# step 3 데이터 전처리
+
+from sklearn import preprocessing
+
+label_encoder = preprocessing.LabelEncoder()
+onehot_encoder = preprocessing.OneHotEncoder()
+
+onehot_loc = label_encoder.fit_transform(df['지역'])
+onehot_code = label_encoder.fit_transform(df['코드'])
+onehot_type = label_encoder.fit_transform(df['유형'])
+onehot_day = label_encoder.fit_transform(df['주야'])
+
+df['location'] = onehot_loc
+df['code'] = onehot_code
+df['type'] = onehot_type
+df['day'] = onehot_day
+
+print(df.head())
+print()                           
