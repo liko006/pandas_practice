@@ -55,3 +55,12 @@ df['day'] = onehot_day
 
 print(df.head())
 print()                           
+
+# step 4 DBSCAN 군집 모형 - sklean
+from sklearn import cluster
+
+# 분석에 사용할 속정 선택 (과학고, 외고국제고, 자사고 진학률)
+columns_list = [9,10,13]
+X = df.iloc[:, columns_list]
+print(X[:5])
+print()
