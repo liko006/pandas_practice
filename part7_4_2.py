@@ -135,7 +135,7 @@ X3 = df.iloc[:, columns_list3]
 print(X3[:5])
 print()
 
-X3 = preprocessing.StandardScaler().fit(X3).transfor(X3)
+X3 = preprocessing.StandardScaler().fit(X3).transform(X3)
 dbm3 = cluster.DBSCAN(eps=0.2, min_samples=5)
 dbm3.fit(X3)
 df['Cluster3'] = dbm3.labels_
