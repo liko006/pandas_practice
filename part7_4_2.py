@@ -102,3 +102,29 @@ for name, lat, lng, clus in zip(df.학교명, df.위도, df.경도, df.Cluster):
     folium.CircleMarker([lat, lng], radius=5, color=colors[clus], fill=True, fill_color=colors[clus], fill_opacity=0.7, popup=name).add_to(cluster_map)
     
 cluster_map.save('./seoul_mschool_cluster.html')
+
+# X2 데이터셋에 위의 과정 + 유형 속성을 추가
+columns_list2 = [9,10,13,22]
+X2 =df.iloc[:, columns_list2]
+print(X2[:5])
+print()
+
+X2 = preprocessing.StandarScaler().fit(X2).transform(X2)
+dbm2 = cluster.DBSCAN(eps=0.2, min_samples=5)
+dbm2.fit(X2)
+df['Cluster'] = dbm2.labels_
+
+grouped2_cols = [0,1,3] + columns_list2
+grouped2 = df.groupby('Cluster')
+for key, group in grouped2:
+    print('* key :', key)
+    print('* number :', len(group))
+    print(group.iloc[:, grouped2_cols].head())
+    print()
+    
+cluster2_map = folium.Map(location=[37.55,127.98], tiles='Stamen Terrain', zoom_start=12)
+
+for name, lat, lng, clus in zip(df.학교명, df.위도, df.경도, df.Cluster2):
+    folium.CircleMarker([lat,lng], radius=5, color=colors[clus], fill=True, fill_color=colors[clus], fill_opacity=0.7, popup=name).add_to(cluster2_map)
+    
+cluster2_map.save('./seoul_mschool_cluster2.html')
