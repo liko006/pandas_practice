@@ -83,3 +83,22 @@ print()
 df['Cluster'] = cluster_label
 print(df.head())
 print()
+
+# 클러스터 값으로 그룹화 / 그룹별 내용 출력
+grouped_cols = [0,1,3] + columns_list
+grouped = df.groupby('Cluster')
+for key, group in grouped:
+    print('* key :', key)
+    print('* number :', len(group))
+    print(group.iloc[:, grouped_cols].head())
+    print()
+   
+# 그래프 시각화
+colors = {-1:'grey', 0:'coral', 1:'blue', 2:'green', 3:'red', 4:'purple', 5:'orange', 6:'brown', 7:'brick', 8:'yellow', 9:'magenta', 10:'cyan'}
+
+cluster_map = folium.Map(location=[37.55,126.98], tiles='Stamen Terrain', zoom_start=12)
+
+for name, lat, lng, clus in zip(df.학교명, df.위도, df.경도, df.Cluster):
+    folium.CircleMarker([lat, lng], radius=5, color=colors[clus], fill=True, fill_color=colors[clus], fill_opacity=0.7, popup=name).add_to(cluster_map)
+    
+cluster_map.save('./seoul_mschool_cluster.html')
