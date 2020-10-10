@@ -72,6 +72,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 
 print('train data 개수: ', len(X_train))
 print('test data 개수: ', len(X_test))
+print()
 
 # step 5 Ordinary Linear Regression 모형 만들기 -sklearn 사용
 from sklearn.linear_model import LinearRegression
